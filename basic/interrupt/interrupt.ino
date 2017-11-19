@@ -1,14 +1,20 @@
 int ledPin = 9; 
+int ledPinIr = 12; //init the pin which will be ledON when pin 2 be interrupted
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(2, INPUT_PULLUP);
-  attachInterrupt(2, ledON, LOW);
 }
 
 void loop() {
+
+  if(ledPinIr == 12)
+    attachInterrupt(2, ledON, LOW);
+  else
+    attachInterrupt(2, ledON, LOW);
+  
   // put your main code here, to run repeatedly:
-  analogLight(ledPin, 5);
+  analogLight(ledPin, 2);
 }
 
 
@@ -34,6 +40,9 @@ void ledON()
 //  digitalWrite(13, 0);
 //  delay(100);  
 
-  for(int i = 0; i < 5; i++)
-  analogLight(12, 5);
+  if(ledPinIr == 11) ledPinIr = 12;
+  else ledPinIr = 11;
+
+  for(int i = 0; i < 2; i++)
+    analogLight(ledPinIr, 2); 
 }
