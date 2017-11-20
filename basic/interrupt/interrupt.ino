@@ -1,3 +1,7 @@
+/*
+* refer to 3-5
+*/
+
 int ledPin = 9; 
 int ledPinIr = 12; //init the pin which will be ledON when pin 2 be interrupted
 

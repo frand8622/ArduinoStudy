@@ -1,9 +1,10 @@
 /*
+ * refer to 3-3
 */
 
 int pinPorts[] = {9, 6, 5, 3};
 int pinPortsSize = 0;
-int delayTime = 50;
+int delayTime = 3;
 
 void setup() {
     pinPortsSize = sizeof(pinPorts)/sizeof(int);
@@ -11,14 +12,9 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-
   for(int i = 0; i < pinPortsSize; i++){
-  setLight(pinPorts[i], 5);
+    analogLight(pinPorts[i], delayTime);
   } 
-}
-
-void setLight(int pinPort, int delayTime){
-  analogLight(pinPort, delayTime);
 }
 
 void analogLight(int pinPort, int delayTime){
@@ -26,12 +22,11 @@ void analogLight(int pinPort, int delayTime){
   {
     delay(delayTime);
     analogWrite(pinPort, i);
-    }
+  }
 
   for(int i = 255; i >= 0; i--)
   {
     delay(delayTime);
     analogWrite(pinPort, i);
-    }
-    
+  }
 }

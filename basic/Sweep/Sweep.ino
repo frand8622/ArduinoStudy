@@ -1,6 +1,7 @@
 
 
 /*
+ * refer to 3-4
 Sweep
  by BARRAGAN <http://barraganstudio.com>
  This example code is in the public domain.
